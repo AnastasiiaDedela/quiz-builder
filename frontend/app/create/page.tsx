@@ -44,18 +44,15 @@ export default function CreateQuizPage() {
   };
 
   return (
-    <main className="min-h-screen py-12 px-4">
+    <main className="flex-1 py-8 px-4">
       <div className="mx-auto max-w-2xl">
 
-        <div className="mb-10">
-          <p className="text-sm font-semibold tracking-widest uppercase mb-2" style={{ color: 'var(--primary)' }}>
-            Quiz Builder
-          </p>
-          <h1 className="text-4xl font-extrabold leading-tight" style={{ color: 'var(--text)' }}>
+        <div className="mb-8">
+          <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight" style={{ color: 'var(--text)' }}>
             Create a new quiz.
           </h1>
-          <p className="mt-2 text-base" style={{ color: 'var(--muted)' }}>
-            Fill in a title, add your questions, and submit.
+          <p className="mt-1.5 text-sm" style={{ color: 'var(--muted)' }}>
+            Add a title, build your questions, and submit.
           </p>
         </div>
 
@@ -63,7 +60,7 @@ export default function CreateQuizPage() {
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
 
             <div
-              className="rounded-2xl p-5 shadow-sm"
+              className="rounded-2xl p-4 sm:p-5 shadow-sm"
               style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}
             >
               <label className="block text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: 'var(--muted)' }}>
@@ -73,11 +70,7 @@ export default function CreateQuizPage() {
                 {...register('title')}
                 placeholder="e.g. World Geography Basics"
                 className="w-full rounded-xl px-4 py-3 text-base font-medium outline-none transition-all"
-                style={{
-                  background: 'var(--bg)',
-                  border: '1.5px solid var(--border)',
-                  color: 'var(--text)',
-                }}
+                style={{ background: 'var(--bg)', border: '1.5px solid var(--border)', color: 'var(--text)' }}
                 onFocus={e => (e.target.style.borderColor = 'var(--primary)')}
                 onBlur={e => (e.target.style.borderColor = 'var(--border)')}
               />
@@ -97,12 +90,8 @@ export default function CreateQuizPage() {
             <button
               type="button"
               onClick={() => append({ type: 'BOOLEAN', text: '', options: [] })}
-              className="w-full rounded-2xl py-3.5 text-sm font-semibold transition-all"
-              style={{
-                border: '1.5px dashed var(--primary)',
-                color: 'var(--primary)',
-                background: 'transparent',
-              }}
+              className="w-full rounded-2xl py-3.5 text-sm font-semibold transition-all mx-px"
+              style={{ border: '1.5px dashed var(--primary)', color: 'var(--primary)', background: 'transparent' }}
               onMouseEnter={e => ((e.currentTarget as HTMLButtonElement).style.background = '#5b4fcf12')}
               onMouseLeave={e => ((e.currentTarget as HTMLButtonElement).style.background = 'transparent')}
             >
