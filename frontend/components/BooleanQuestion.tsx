@@ -1,10 +1,6 @@
 'use client';
 
-interface Props {
-  index: number;
-}
-
-export default function BooleanQuestion({ index }: Props) {
+export default function BooleanQuestion() {
   return (
     <div className="flex gap-5">
       {['True', 'False'].map((label) => (

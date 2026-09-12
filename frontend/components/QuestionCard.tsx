@@ -68,7 +68,7 @@ export default function QuestionCard({ index, onRemove }: Props) {
       </div>
 
       <div>
-        {type === 'BOOLEAN' && <BooleanQuestion index={index} />}
+        {type === 'BOOLEAN' && <BooleanQuestion />}
         {type === 'INPUT' && <InputQuestion />}
         {type === 'CHECKBOX' && <CheckboxQuestion questionIndex={index} />}
       </div>
