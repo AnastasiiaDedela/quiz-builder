@@ -14,15 +14,15 @@ const TYPE_LABELS: Record<string, string> = {
 function QuestionDisplay({ question, index }: { question: Question; index: number }) {
   return (
     <div
-      className="rounded-2xl p-5 space-y-4 shadow-sm"
+      className="rounded-2xl p-4 sm:p-5 space-y-4 shadow-sm"
       style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}
     >
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-3">
         <span className="text-xs font-bold tracking-widest uppercase" style={{ color: 'var(--primary)' }}>
           Question {index + 1}
         </span>
         <span
-          className="text-xs font-semibold px-3 py-1 rounded-full"
+          className="text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap"
           style={{ background: 'var(--bg)', color: 'var(--muted)', border: '1px solid var(--border)' }}
         >
           {TYPE_LABELS[question.type]}
@@ -84,7 +84,7 @@ export default function QuizDetailPage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen py-12 px-4">
+      <main className="flex-1 py-8 px-4">
         <div className="mx-auto max-w-2xl space-y-4">
           <div className="h-10 w-48 rounded-xl animate-pulse" style={{ background: 'var(--surface)' }} />
           {[...Array(3)].map((_, i) => (
@@ -97,7 +97,7 @@ export default function QuizDetailPage() {
 
   if (notFound || !quiz) {
     return (
-      <main className="min-h-screen py-12 px-4 flex items-center justify-center">
+      <main className="flex-1 py-8 px-4 flex items-center justify-center">
         <div className="text-center">
           <p className="text-lg font-semibold mb-2" style={{ color: 'var(--text)' }}>Quiz not found</p>
           <button onClick={() => router.push('/quizzes')} className="text-sm font-medium" style={{ color: 'var(--primary)' }}>
@@ -109,22 +109,22 @@ export default function QuizDetailPage() {
   }
 
   return (
-    <main className="min-h-screen py-12 px-4">
+    <main className="flex-1 py-8 px-4">
       <div className="mx-auto max-w-2xl">
 
         <button
           onClick={() => router.push('/quizzes')}
-          className="text-sm font-semibold mb-8 flex items-center gap-1.5 transition-opacity hover:opacity-70"
+          className="text-sm font-semibold mb-6 flex items-center gap-1.5 transition-opacity hover:opacity-70"
           style={{ color: 'var(--primary)' }}
         >
-          ← Back to quizzes
+          ← Back
         </button>
 
         <div className="mb-8">
-          <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: 'var(--primary)' }}>
+          <p className="text-xs font-semibold tracking-widest uppercase mb-1" style={{ color: 'var(--primary)' }}>
             {quiz.questions.length} {quiz.questions.length === 1 ? 'question' : 'questions'}
           </p>
-          <h1 className="text-4xl font-extrabold leading-tight" style={{ color: 'var(--text)' }}>
+          <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight" style={{ color: 'var(--text)' }}>
             {quiz.title}
           </h1>
         </div>

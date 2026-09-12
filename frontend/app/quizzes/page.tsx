@@ -25,27 +25,16 @@ export default function QuizzesPage() {
   };
 
   return (
-    <main className="min-h-screen py-12 px-4">
+    <main className="flex-1 py-8 px-4">
       <div className="mx-auto max-w-2xl">
 
-        <div className="flex items-end justify-between mb-10">
-          <div>
-            <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: 'var(--primary)' }}>
-              Quiz Builder
-            </p>
-            <h1 className="text-4xl font-extrabold leading-tight" style={{ color: 'var(--text)' }}>
-              Your quizzes.
-            </h1>
-          </div>
-          <Link
-            href="/create"
-            className="rounded-xl px-5 py-2.5 text-sm font-bold text-white transition-all"
-            style={{ background: 'var(--primary)' }}
-            onMouseEnter={e => ((e.currentTarget as HTMLAnchorElement).style.background = 'var(--primary-hover)')}
-            onMouseLeave={e => ((e.currentTarget as HTMLAnchorElement).style.background = 'var(--primary)')}
-          >
-            + New Quiz
-          </Link>
+        <div className="mb-8">
+          <p className="text-xs font-semibold tracking-widest uppercase mb-1" style={{ color: 'var(--primary)' }}>
+            Dashboard
+          </p>
+          <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight" style={{ color: 'var(--text)' }}>
+            Your quizzes.
+          </h1>
         </div>
 
         {loading && (
@@ -62,7 +51,7 @@ export default function QuizzesPage() {
 
         {!loading && quizzes.length === 0 && (
           <div
-            className="rounded-2xl p-12 text-center"
+            className="rounded-2xl p-10 sm:p-12 text-center"
             style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}
           >
             <p className="text-lg font-semibold mb-1" style={{ color: 'var(--text)' }}>No quizzes yet</p>
@@ -82,7 +71,7 @@ export default function QuizzesPage() {
             {quizzes.map((quiz) => (
               <div
                 key={quiz.id}
-                className="group flex items-center justify-between rounded-2xl px-6 py-5 shadow-sm transition-all hover:shadow-md"
+                className="group flex items-center justify-between rounded-2xl px-5 py-4 sm:px-6 sm:py-5 shadow-sm transition-all hover:shadow-md"
                 style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}
               >
                 <Link href={`/quizzes/${quiz.id}`} className="flex-1 min-w-0">
@@ -97,7 +86,7 @@ export default function QuizzesPage() {
                 <button
                   onClick={() => handleDelete(quiz.id)}
                   disabled={deletingId === quiz.id}
-                  className="ml-4 rounded-xl p-2.5 text-sm transition-all opacity-0 group-hover:opacity-100 disabled:opacity-50"
+                  className="ml-4 rounded-xl p-2.5 text-sm transition-all sm:opacity-0 sm:group-hover:opacity-100 disabled:opacity-50"
                   style={{ color: 'var(--muted)', background: 'var(--bg)' }}
                   onMouseEnter={e => {
                     (e.currentTarget as HTMLButtonElement).style.color = '#ef4444';
