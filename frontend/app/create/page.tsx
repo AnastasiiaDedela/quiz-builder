@@ -90,7 +90,7 @@ export default function CreateQuizPage() {
             <button
               type="button"
               onClick={() => append({ type: 'BOOLEAN', text: '', options: [] })}
-              className="w-full rounded-2xl py-3.5 text-sm font-semibold transition-all"
+              className="w-full rounded-2xl py-3.5 text-sm font-semibold transition-all mx-px"
               style={{ border: '1.5px dashed var(--primary)', color: 'var(--primary)', background: 'transparent' }}
               onMouseEnter={e => ((e.currentTarget as HTMLButtonElement).style.background = '#5b4fcf12')}
               onMouseLeave={e => ((e.currentTarget as HTMLButtonElement).style.background = 'transparent')}
