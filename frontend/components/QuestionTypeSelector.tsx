@@ -19,7 +19,7 @@ export default function QuestionTypeSelector({ index }: Props) {
 
   return (
     <div
-      className="flex flex-wrap rounded-xl p-1 gap-1"
+      className="flex flex-col min-[500px]:flex-row rounded-xl p-1 gap-1"
       style={{ background: 'var(--bg)', border: '1.5px solid var(--border)' }}
     >
       {TYPES.map((t) => {

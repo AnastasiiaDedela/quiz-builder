@@ -86,9 +86,9 @@ export default function QuizDetailPage() {
     return (
       <main className="flex-1 py-8 px-4">
         <div className="mx-auto max-w-2xl space-y-4">
-          <div className="h-10 w-48 rounded-xl animate-pulse" style={{ background: 'var(--surface)' }} />
+          <div className="h-10 w-48 rounded-xl animate-pulse" style={{ background: '#c8c3e0' }} />
           {[...Array(3)].map((_, i) => (
-            <div key={i} className="h-28 rounded-2xl animate-pulse" style={{ background: 'var(--surface)' }} />
+            <div key={i} className="h-28 rounded-2xl animate-pulse" style={{ background: '#c8c3e0' }} />
           ))}
         </div>
       </main>
